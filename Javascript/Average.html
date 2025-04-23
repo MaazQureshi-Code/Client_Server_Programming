@@ -1,0 +1,38 @@
+<!DOCTYPE htm       l>
+<!-- Fig. 7.7: average.html -->
+<!-- Counter-controlled repetition to calculate a class average. -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Class Average Program</title>
+    <script>
+        // Declare variables
+        let total = 0;          // sum of grades
+        let gradeCounter = 1;  // number of grades entered
+        let grade;             // grade input (string)
+        let gradeValue;        // grade value (integer)
+        let average;           // average of all grades
+
+        // Processing phase
+        while (gradeCounter <= 10) {  // Loop 10 times
+            // Prompt for input and read grade
+            grade = window.prompt("Enter integer grade:", "0");
+            // Convert to integer
+            gradeValue = parseInt(grade);
+            // Add to total
+            total += gradeValue;
+            // Increment counter
+            gradeCounter++;
+        }
+
+        // Termination phase
+        average = total / 10;  // Calculate average
+
+        // Display result
+        document.writeln("<h1>Class average is " + average + "</h1>");
+    </script>
+</head>
+<body>
+    <!-- Results will be displayed by JavaScript -->
+</body>
+</html>

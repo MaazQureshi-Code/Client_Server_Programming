@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Fig. 10.5: InitArray2.html -->
+<!-- Web page for showing the results of initializing arrays. -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Initializing Arrays</title>
+    <style>
+        table { border-collapse: collapse; width: 200px; }
+        th, td { border: 1px solid black; padding: 4px; }
+        th { background-color: #f0f0f0; }
+    </style>
+    <script>
+        function start() {
+            var colors = new Array("cyan", "magenta", "yellow", "black");
+            var integers1 = [2, 4, 6, 8];
+            var integers2 = [2, , , 8];
+
+            // Display arrays
+            outputArray("Array colors contains", colors, document.getElementById("output1"));
+            outputArray("Array integers1 contains", integers1, document.getElementById("output2"));
+            outputArray("Array integers2 contains", integers2, document.getElementById("output3"));
+        }
+
+        function outputArray(heading, theArray, output) {
+            let content = `<h2>${heading}</h2>
+                <table>
+                    <thead>
+                        <tr><th>Index</th><th>Value</th></tr>
+                    </thead>
+                    <tbody>`;
+
+            // Generate table rows
+            for (let i = 0; i < theArray.length; i++) {
+                content += `<tr>
+                    <td>${i}</td>
+                    <td>${theArray[i] ?? 'empty'}</td>
+                </tr>`;
+            }
+
+            content += "</tbody></table>";
+            output.innerHTML = content;
+        }
+
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+<body>
+    <div id="output1"></div>
+    <div id="output2"></div>
+    <div id="output3"></div>
+</body>
+</html>

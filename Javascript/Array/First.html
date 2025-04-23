@@ -1,0 +1,33 @@
+<script>
+    var n1 = new Array(5); // allocate five-element array
+    var n2 = new Array();  // allocate empty array
+    var length = n1.length; // get array length once before the loop 
+
+    for (var i = 0; i < length; ++i) {
+        n1[i] = i;
+    }
+    for (i = 0; i < 5; i++) {
+        n2[i] = i;
+    }
+
+    function outputArray(heading, theArray, output) {
+        var content = "<h2>" + heading + "</h2><table>" +
+            "<thead><th>Index</th><th>Value</th></thead><tbody>";
+
+        var length = theArray.length;
+        for (var i = 0; i < length; ++i) {
+            content += "<tr><td>" + i + "</td><td>" + theArray[i] + "</td></tr>";
+        }
+        content += "</tbody></table>";
+        output.innerHTML = content;
+    }
+
+    function start() {
+        var output1 = document.getElementById("output1");
+        var output2 = document.getElementById("output2");
+        outputArray("Array n1 Contents", n1, output1);
+        outputArray("Array n2 Contents", n2, output2);
+    }
+
+    window.addEventListener("load", start, false);
+</script>

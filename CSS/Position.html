@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .first{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+       }
+       .second{
+        position: absolute;
+        top: 25px;
+        left: 100px;
+        z-index: 2;
+       }
+       .text{
+        position: absolute;
+        top: 25px;
+        left: 100px;
+        font-size: 20pt;
+        z-index: 3;
+        color: firebrick;
+       }
+
+    </style>
+</head>
+<body>
+
+    <p><img src="/Image/download (3).jpg" alt="First positioned image" class="first" /></p>
+
+    <p><img src="./Image/download (4).jpg" alt="First positioned image" class="second" /></p>
+    
+    <p class="text">Positioned Text</p>
+</body>
+</html>

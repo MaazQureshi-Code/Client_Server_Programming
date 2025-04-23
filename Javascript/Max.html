@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var input1 = window.prompt("Enter first number")
+        var input2 = window.prompt("Enter first number 2")
+        var input3 = window.prompt("Enter first number 3 ")
+
+        var value1 = parseInt(input1);
+        var value2 = parseInt(input2);
+        var value3 = parseInt(input3);
+        var maxValue = maximum(value1,value2,value3)
+        document.writeln("<p>" + maxValue + "</p>")
+
+        function maximum(x,y,z) {
+            return Math.max(x , Math.max(y,z));
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

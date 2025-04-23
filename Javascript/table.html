@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Table</title>
+    <style>
+        table {
+            width: 300px;
+            border-collapse: collapse;
+            background-color: lightblue;
+        }
+        table, td, th {
+            border: 1px solid black;  /* Fixed typo from 'lpx' to '1px' */
+            padding: 4px;
+        }
+        th {
+            text-align: left;
+            color: white;
+            background-color: darkblue;
+        }
+        tr.odorow {
+            background-color: white;
+        }
+    </style>
+    <script>
+        var amount;
+        var principal = 1000.0;
+        var rate = 0.05;
+
+        document.writeln("<table border='1'>");
+        document.writeln("<caption>Calculating Compound Interest</caption>");
+        document.writeln("<thead><tr><th>Year</th><th>Amount on deposit</th></tr></thead><tbody>");
+
+        for (var Year = 1; Year <= 10; Year++) {
+            amount = principal * Math.pow(1.0 + rate, Year);
+            document.writeln("<tr class='oddrow'><td>" + Year +
+                "</td><td>" + amount.toFixed(2) + "</td></tr>");
+        }
+
+        document.writeln("</tbody></table>");
+    </script>
+</head>
+<body>
+</body>
+</html>
