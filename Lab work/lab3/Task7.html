@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix Multiplication</title>
+</head>
+<body>
+    <script>
+      
+        function inputMatrix(name) {
+            let matrix = [];
+            for (let i = 0; i < 3; i++) {
+                matrix[i] = [];
+                for (let j = 0; j < 3; j++) {
+                    let value = parseFloat(prompt(`Enter ${name}[${i+1}][${j+1}]:`));
+                    matrix[i][j] = isNaN(value) ? 0 : value;
+                }
+            }
+            return matrix;
+        }
+
+     
+        function multiplyMatrices(a, b) {
+            let result = [];
+            for (let i = 0; i < 3; i++) {
+                result[i] = [];
+                for (let j = 0; j < 3; j++) {
+                    result[i][j] = 0;
+                    for (let k = 0; k < 3; k++) {
+                        result[i][j] += a[i][k] * b[k][j];
+                    }
+                }
+            }
+            return result;
+        }
+
+      
+        function displayMatrix(matrix, title) {
+            let html = `<h3>${title}</h3><table border='1'>`;
+            for (let row of matrix) {
+                html += "<tr>";
+                for (let val of row) {
+                    html += `<td>${val.toFixed(2)}</td>`;
+                }
+                html += "</tr>";
+            }
+            html += "</table>";
+            return html;
+        }
+
+        let matrixA = inputMatrix("Matrix A");
+        let matrixB = inputMatrix("Matrix B");
+        let resultMatrix = multiplyMatrices(matrixA, matrixB);
+
+        document.write(displayMatrix(matrixA, "Matrix A"));
+        document.write(displayMatrix(matrixB, "Matrix B"));
+        document.write(displayMatrix(resultMatrix, "Result Matrix"));
+    </script>
+</body>
+</html>

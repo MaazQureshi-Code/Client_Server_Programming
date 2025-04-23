@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+
+        var tableHTML = "<table border='1'>";
+        tableHTML += "<tr><th>Number</th><th>Square</th><th>Cube</th></tr>";
+
+        for (let num = 6; num <= 11; num++) {
+            let square = num * num;
+            let cube = num * num * num;
+            tableHTML += "<tr><td>" + num + "</td><td>" + square + "</td><td>" + cube + "</td></tr>";
+        }
+
+        tableHTML += "</table>";
+        document.write(tableHTML);
+    </script>
+</body>
+</html>

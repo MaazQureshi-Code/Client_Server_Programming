@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+    <script>
+        function averageGrade(marks) {
+            if (marks.length === 0) return "No marks entered";
+            const sum = marks.reduce((a, b) => a + b, 0);
+            const average = sum / marks.length;
+            
+            if (average >= 90) return 'E (Excellent)';
+            else if (average >= 80) return 'G (Good)';
+            else if (average >= 70) return 'A (Average)';
+            else if (average >= 60) return 'B (Bad)';
+            else return 'F (Fail)';
+        }
+
+        let marks = [];
+        while (true) {
+            let input = prompt("Enter a student's mark (cancel to finish):");
+            if (input === null) break;
+            let mark = parseFloat(input);
+            if (!isNaN(mark)) marks.push(mark);
+        }
+        if (marks.length === 0) {
+            document.write("<p>No marks entered.</p>");
+        } else {
+            const grade = averageGrade(marks);
+            document.write(`<p>Grade: ${grade}</p>`);
+        }
+    </script>
+</body>
+</html>

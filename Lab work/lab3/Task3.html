@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        let outputHTML = "";
+        
+        for (let employee = 1; employee <= 3; employee++) {
+            var hours = parseFloat(prompt("Enter hours worked for Employee " + employee + ":"));
+            var rate = parseFloat(prompt("Enter hourly rate for Employee " + employee + ":"));
+            var grossPay;
+
+            if (hours > 40) {
+                grossPay = 40 * rate + (hours - 40) * rate * 1.5;
+            } else {
+                grossPay = hours * rate;
+            }
+
+            outputHTML += "<p>Employee " + employee + " Gross Pay: $" + grossPay.toFixed(2) + "</p>";
+        }
+        
+        document.write(outputHTML);
+    </script>
+</body>
+</html>

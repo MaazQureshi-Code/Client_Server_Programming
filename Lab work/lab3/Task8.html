@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        let ranges = new Array(9).fill(0);
+
+        while (true) {
+            let sales = prompt("Enter gross sales (or cancel to finish):");
+            if (sales === null) break;
+
+            sales = parseFloat(sales);
+            if (isNaN(sales)) continue;
+
+        
+            let rangeIndex = Math.floor((salary - 200) / 100);
+            if (salary >= 1000) rangeIndex = 8;
+            else if (rangeIndex < 0) rangeIndex = 0;
+
+            ranges[rangeIndex]++;
+        }
+
+        let tableHTML = `
+            <table border='1'>
+                <tr><th>Salary Range</th><th>Number of Salespeople</th></tr>
+                <tr><td>$200-299</td><td>${ranges[0]}</td></tr>
+                <tr><td>$300-399</td><td>${ranges[1]}</td></tr>
+                <tr><td>$400-499</td><td>${ranges[2]}</td></tr>
+                <tr><td>$500-599</td><td>${ranges[3]}</td></tr>
+                <tr><td>$600-699</td><td>${ranges[4]}</td></tr>
+                <tr><td>$700-799</td><td>${ranges[5]}</td></tr>
+                <tr><td>$800-899</td><td>${ranges[6]}</td></tr>
+                <tr><td>$900-999</td><td>${ranges[7]}</td></tr>
+                <tr><td>$1000+</td><td>${ranges[8]}</td></tr>
+            </table>
+        `;
+
+        document.write(tableHTML);
+    </script>
+</body>
+</html>

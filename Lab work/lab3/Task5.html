@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        var totals = [0, 0, 0, 0, 0, 0]; 
+
+        while (true) {
+            var productInput = prompt("Enter product number (1-5) or click Cancel to finish:");
+            if (productInput === null) break; 
+            
+            var product = parseInt(productInput);
+            if (isNaN(product) || product < 1 || product > 5) break; 
+            
+            var quantityInput = prompt("Enter quantity sold for Product " + product + ":");
+            if (quantityInput === null) break;
+            var quantity = parseInt(quantityInput);
+            if (isNaN(quantity) || quantity < 0) continue; 
+
+        
+            var price;
+            switch (product) {
+                case 1: price = 2.98; break;
+                case 2: price = 4.50; break;
+                case 3: price = 9.98; break;
+                case 4: price = 4.49; break;
+                case 5: price = 6.87; break;
+                default: price = 0; 
+            }
+
+            totals[product] += price * quantity;
+        }
+        var tableHTML = "<table border='1'><tr><th>Product #</th><th>Total Sales</th></tr>";
+        for (var i = 1; i <= 5; i++) {
+            tableHTML += "<tr><td>Product " + i + "</td><td>$" + totals[i].toFixed(2) + "</td></tr>";
+        }
+        tableHTML += "</table>";
+
+        document.write(tableHTML);
+    </script>
+</body>
+</html>
